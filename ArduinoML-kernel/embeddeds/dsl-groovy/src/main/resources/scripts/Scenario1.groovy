@@ -1,0 +1,15 @@
+package scripts
+
+sensor "button" onPin 12
+actuator "led" pin 11
+actuator "buzzer" pin 9
+
+state "on" means "led" becomes "high" and "buzzer" becomes "high"
+state "off" means "led" becomes "low" and "buzzer" becomes "low"
+
+initial "off"
+
+from "on" to "off" when "button" becomes "low"
+from "off" to "on" when "button" becomes "high"
+
+export "Switch!"
