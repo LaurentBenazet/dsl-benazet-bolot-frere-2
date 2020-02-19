@@ -10,8 +10,11 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Note {
-    private double velocity;
+    private int velocity = 100;
     private double duration;
     private double offset;
-    private Instrument instrument;
+
+    public Note(double duration){
+        this.duration = duration;
+    }
 }

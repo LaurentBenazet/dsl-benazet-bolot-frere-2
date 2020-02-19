@@ -16,6 +16,18 @@ public class Bar {
     private List<String> notes = new ArrayList<>();
     private List<Note> realnotes = new ArrayList<>();
 
+    public Bar(List<String> notes){
+        this.notes = notes;
+        //temporary test
+        for (String x : notes) {
+            if(x.equals("e")){
+                realnotes.add(new Note(0.5));
+            } else {
+                realnotes.add(new Note(1));
+            }
+        }
+    }
+
     public void addNote(String note) {
         notes.add(note);
     }

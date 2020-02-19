@@ -15,7 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 public class Instrument {
     private List<Bar> bars = new ArrayList<>();
-    private String type;
+    private int type;
     private String name;
 
     public Instrument(String name) {
