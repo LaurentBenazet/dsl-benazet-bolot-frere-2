@@ -31,11 +31,6 @@ public class ToWiring extends Visitor<StringBuffer> {
     }
 
     @Override
-    public void visit(Beat beat) {
-
-    }
-
-    @Override
     public void visit(Instrument instrument) {
 
     }

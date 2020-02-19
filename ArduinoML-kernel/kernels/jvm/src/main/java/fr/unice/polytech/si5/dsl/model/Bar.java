@@ -13,5 +13,14 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Bar {
-    private List<Beat> beats = new ArrayList<>();
+    private List<String> notes = new ArrayList<>();
+    private List<Note> realnotes = new ArrayList<>();
+
+    public void addNote(String note) {
+        notes.add(note);
+    }
+
+    public void addNote(Note note) {
+        realnotes.add(note);
+    }
 }

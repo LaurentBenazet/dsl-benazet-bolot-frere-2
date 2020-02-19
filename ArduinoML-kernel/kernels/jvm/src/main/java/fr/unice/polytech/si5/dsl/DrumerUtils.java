@@ -25,8 +25,7 @@ public class DrumerUtils {
         //test1(sequencer);
     }
 
-    private static void test1(Sequencer sequencer)
-            throws InvalidMidiDataException, MidiUnavailableException, InterruptedException {
+    private static void test1(Sequencer sequencer) throws Exception {
         System.out.println("start");
         int tempo = 80;
         int nbBar = 2;

@@ -14,4 +14,13 @@ import java.util.List;
 @NoArgsConstructor
 public class Track {
     private List<Section> sections = new ArrayList<>();
+    private String name;
+
+    public Track(String name) {
+        this.name = name;
+    }
+
+    public void addSection(Section section) {
+        sections.add(section);
+    }
 }
