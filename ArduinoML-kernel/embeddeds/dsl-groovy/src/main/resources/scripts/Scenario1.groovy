@@ -1,15 +1,7 @@
 package scripts
 
-sensor "button" onPin 12
-actuator "led" pin 11
-actuator "buzzer" pin 9
+//section "intro"
+bar (loop(8, "bd", "__"), "bd", "bd")
+bar "__" "kd" "__" "kd" "__" "kd"
 
-state "on" means "led" becomes "high" and "buzzer" becomes "high"
-state "off" means "led" becomes "low" and "buzzer" becomes "low"
-
-initial "off"
-
-from "on" to "off" when "button" becomes "low"
-from "off" to "on" when "button" becomes "high"
-
-export "Switch!"
+export "My App"

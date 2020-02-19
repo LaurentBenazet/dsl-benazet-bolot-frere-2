@@ -5,16 +5,11 @@ import java.lang.reflect.Method;
 
 // The following snippet adds the 'newProp' to all types that are a subtype of GroovyObjects
 contribute(currentType(subType('groovy.lang.Script'))) {
+
+
+
 	property name : 'high', type: Object, provider: 'GroovuinoML', doc: 'Stands for SIGNAL.HIGH'
 	property name : 'low', type: Object, provider: 'GroovuinoML', doc: 'Stands for SIGNAL.LOW'
-
-//	property name : 'led', type : Object, provider: 'GroovuinoML', doc: 'A variable'
-//	property name : 'led1', type : Object, provider: 'GroovuinoML', doc: 'A variable'
-//	property name : 'led2', type : Object, provider: 'GroovuinoML', doc: 'A variable'
-//	property name : 'led3', type : Object, provider: 'GroovuinoML', doc: 'A variable'
-//	property name : 'button', type : Object, provider: 'GroovuinoML', doc: 'A variable'
-//	property name : 'on', type : Object, provider: 'GroovuinoML', doc: 'A variable'
-//	property name : 'off', type : Object, provider: 'GroovuinoML', doc: 'A variable'
 
 	method type: Script, name: 'sensor', params: [name:String], doc: 'Create a new Sensor'
 	method type: Script, name: 'actuator', params: [name:String], doc: 'Create a new Actuator'

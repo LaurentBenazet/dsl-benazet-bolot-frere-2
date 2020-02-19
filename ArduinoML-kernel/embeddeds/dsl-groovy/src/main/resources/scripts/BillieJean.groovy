@@ -15,3 +15,4 @@ instr "sd" bar "_ q _ q" bar "_ q _ q"
 instr "bd" bar "q _ q _" bar "q _ q _"
 
 play "Main"
+export "Billie Jean"

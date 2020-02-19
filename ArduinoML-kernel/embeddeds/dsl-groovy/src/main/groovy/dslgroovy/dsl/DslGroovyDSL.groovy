@@ -1,6 +1,5 @@
 package dslgroovy.dsl
 
-import fr.unice.polytech.si5.dsl.structural.SIGNAL
 import org.codehaus.groovy.control.CompilerConfiguration
 import org.codehaus.groovy.control.customizers.SecureASTCustomizer
 
@@ -16,9 +15,6 @@ class DslGroovyDSL {
         configuration = getDSLConfiguration()
         configuration.setScriptBaseClass("dslgroovy.dsl.DslGroovyBasescript")
         shell = new GroovyShell(configuration)
-
-        binding.setVariable("high", SIGNAL.HIGH)
-        binding.setVariable("low", SIGNAL.LOW)
     }
 
     private static CompilerConfiguration getDSLConfiguration() {
