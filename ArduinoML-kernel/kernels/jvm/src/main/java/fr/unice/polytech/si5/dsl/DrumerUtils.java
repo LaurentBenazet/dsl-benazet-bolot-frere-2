@@ -19,8 +19,8 @@ public class DrumerUtils {
     public static void main(String[] args) throws Exception {
 		Sequencer sequencer = MidiSystem.getSequencer();
         test1(sequencer);
-        //loadSoundbank(sequencer, "ArduinoML-kernel/kernels/jvm/soundBank/Scratch_3_0.sf2");
-        //test1(sequencer);
+        loadSoundbank(sequencer, "ArduinoML-kernel/kernels/jvm/soundBank/Scratch_3_0.sf2");
+        test1(sequencer);
         //loadSoundbank(sequencer, "ArduinoML-kernel/kernels/jvm/soundBank/Yamaha_RX7_Drums.sf2");
         //test1(sequencer);
     }
@@ -103,7 +103,7 @@ public class DrumerUtils {
         synthesizer.loadAllInstruments(soundfont);
 
         System.out.println("##############################################################");
-        System.out.println(Arrays.toString(synthesizer.getAvailableInstruments()));
+        Arrays.asList(synthesizer.getAvailableInstruments()).forEach(System.out::println);
 
         for (Transmitter tm : sequencer.getTransmitters()) {
             tm.close();
