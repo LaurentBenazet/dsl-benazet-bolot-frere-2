@@ -1,4 +1,4 @@
-package fr.unice.polytech.si5.dsl.model;
+package fr.unice.polytech.si5.dsl.converter;
 
 public enum NoteToTone {
     A(-3),
