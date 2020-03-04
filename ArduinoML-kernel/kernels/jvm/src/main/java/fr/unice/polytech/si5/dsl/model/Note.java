@@ -10,11 +10,16 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Note {
-    private int velocity = 100;
+    private int velocity = 50;
     private double duration;
     private double offset;
+    private int noteOffset;
 
     public Note(double duration){
         this.duration = duration;
+    }
+    public Note(double duration,int noteOffset){
+        this.duration = duration;
+        this.noteOffset = noteOffset;
     }
 }

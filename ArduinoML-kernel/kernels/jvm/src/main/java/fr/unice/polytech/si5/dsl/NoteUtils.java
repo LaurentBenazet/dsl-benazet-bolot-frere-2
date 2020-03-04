@@ -8,11 +8,11 @@ import static javax.sound.midi.ShortMessage.NOTE_ON;
 public class NoteUtils {
 
 
-    private static void createEvent(Track track, int type, int chan, int instr, long tick, int velocity) {
+    private static void createEvent(Track track, int type, int chan, int note, long tick, int velocity) {
         ShortMessage message = new ShortMessage();
 
         try {
-            message.setMessage(type, chan, instr, velocity);
+            message.setMessage(type, chan, note, velocity);
             MidiEvent event = new MidiEvent(message, tick);
             track.add(event);
         } catch (Exception ex) {
@@ -20,12 +20,21 @@ public class NoteUtils {
         }
     }
 
-    public static void addNote(Track track, int instr, long tick, int velocity) {
+    public static void addNote(Track track, int channel,int note, long tick, int velocity,double duration) {
         final int NOTEON = 144;
         final int NOTEOFF = 128;
 
-        createEvent(track, NOTEON, 9, instr, tick, velocity);
-        createEvent(track, NOTEOFF, 9, instr, tick + 1, velocity);
+        int realNote = 60;
+        long delay = (long)(duration-1);
+        if(channel==9){
+            realNote = note;
+            delay = 1;
+        } else {
+            realNote += note;
+        }
+
+        createEvent(track, NOTEON, channel, realNote, tick, velocity);
+        createEvent(track, NOTEOFF, channel, realNote, tick + delay, velocity);
     }
 
 

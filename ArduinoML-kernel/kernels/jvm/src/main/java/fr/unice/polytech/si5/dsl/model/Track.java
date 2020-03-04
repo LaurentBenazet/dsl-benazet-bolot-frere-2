@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @Getter
@@ -15,6 +16,7 @@ import java.util.List;
 public class Track {
     private List<Section> sections = new ArrayList<>();
     private String name;
+    private HashMap<Integer,Integer> instrumentsChannel = new HashMap<>();
 
     public Track(String name) {
         this.name = name;
@@ -22,5 +24,9 @@ public class Track {
 
     public void addSection(Section section) {
         sections.add(section);
+    }
+
+    public void addInstrumentChannel(int instrumentType, int channel){
+        instrumentsChannel.put(instrumentType,channel);
     }
 }
