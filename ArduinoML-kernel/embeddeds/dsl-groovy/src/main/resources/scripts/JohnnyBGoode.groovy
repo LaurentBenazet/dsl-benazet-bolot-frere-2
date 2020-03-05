@@ -6,12 +6,21 @@ instrument "rc" type "ride cymbal"
 instrument "sd" type "snare drum"
 instrument "bd" type "bass drum"
 
+section "Intro"
+tempo 170
+beats 4
+
+instr "rc" bar "_ _ _ _" bar "_ _ _ _"
+instr "sd" bar "q _ _ _" bar "_ _ _ q"
+instr "bd" bar "_ _ _ _" bar "_ _ _ _"
+
+
 section "Main"
 tempo 170
 beats 4
 
-instr "rc" bar "_ _ _ _" bar "_ _ _ _" bar "e e e e e e e e" bar "e e e e e e e e"
-instr "sd" bar "q _ _ _" bar "_ _ _ q" bar "_ q _ q" bar "_ q _ q"
-instr "bd" bar "_ _ _ _" bar "_ _ _ _" bar "q _ q _" bar "q _ q _"
+instr "rc" bar "e e e e e e e e" repeat 55
+instr "sd" bar "_ q _ q" repeat 55
+instr "bd" bar "q _ q _" repeat 55
 
-play "Main"
+play "Intro" "Main"
