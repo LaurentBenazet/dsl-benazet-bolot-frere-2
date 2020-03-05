@@ -2,8 +2,8 @@ package scripts
 
 track "Billie Jean"
 
-instrument "ch" type "closed hithat"
-instrument "sd" type "snare drum"
+instrument "ch" type "closed hi hat"
+instrument "sd" type "acoustic snare"
 instrument "bd" type "bass drum"
 
 section "Main"

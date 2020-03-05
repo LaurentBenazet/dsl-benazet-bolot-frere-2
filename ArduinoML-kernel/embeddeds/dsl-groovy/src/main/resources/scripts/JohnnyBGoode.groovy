@@ -3,7 +3,7 @@ package scripts
 track "Johnny B Goode"
 
 instrument "rc" type "ride cymbal"
-instrument "sd" type "snare drum"
+instrument "sd" type "acoustic snare"
 instrument "bd" type "bass drum"
 
 section "Intro"
