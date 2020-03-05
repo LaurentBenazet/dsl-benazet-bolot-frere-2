@@ -23,4 +23,4 @@ instr "rc" bar "e e e e e e e e" repeat 55
 instr "sd" bar "_ q _ q" repeat 55
 instr "bd" bar "q _ q _" repeat 55
 
-play "Intro" "Main"
+play ("Intro", "Main")

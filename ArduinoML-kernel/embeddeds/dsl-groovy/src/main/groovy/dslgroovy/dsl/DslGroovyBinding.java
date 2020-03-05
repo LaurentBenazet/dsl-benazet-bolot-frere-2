@@ -28,12 +28,6 @@ public class DslGroovyBinding extends Binding {
     }
 
     public Object getVariable(String name) {
-
-        if("e".equals(name)) {
-            // Do stuff
-            return script;
-        }
-
         return super.getVariable(name);
     }
 

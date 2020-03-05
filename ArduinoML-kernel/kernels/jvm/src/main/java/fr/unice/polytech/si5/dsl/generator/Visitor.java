@@ -11,9 +11,8 @@ public abstract class Visitor<T> {
 
 	public abstract void visit(App app);
 
-	public abstract void visit(Bar bar);
+	public abstract void visit(Instrument instrument, Bar bar);
 	public abstract void visit(Instrument instrument);
-	public abstract void visit(Note note);
 	public abstract void visit(Track track);
 	public abstract void visit(Section section);
 

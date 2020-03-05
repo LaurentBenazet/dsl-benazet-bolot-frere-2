@@ -10,25 +10,34 @@ import fr.unice.polytech.si5.dsl.model.Track;
 import groovy.lang.Binding;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class DslGroovyModel {
-    //private List<Brick> bricks;
-    //private List<State> states;
-    //private State initialState;
 
     private Binding binding;
 
-    private Track currentTrack;
+    private Track track;
+    private Map<String, Section> sections = new HashMap<>();
     private Section currentSection;
+    private Instrument currentInstrument;
+    private Bar currentBar;
 
     public DslGroovyModel(Binding binding) {
         this.binding = binding;
+    }
+
+    public Track getTrack() {
+        return track;
     }
 
     @SuppressWarnings("rawtypes")
     public Object generateCode(String appName) {
         App app = new App();
         app.setName(appName);
+        app.setTrack(track);
+
         Visitor codeGenerator = new ToWiring();
         app.accept(codeGenerator);
 
@@ -36,14 +45,12 @@ public class DslGroovyModel {
     }
 
     public void createTrack(String trackName) {
-        currentTrack = new Track(trackName);
-        binding.setVariable(trackName, currentTrack);
+        track = new Track(trackName);
     }
 
     public void createSection(String sectionName) {
         currentSection = new Section(sectionName);
-        currentTrack.addSection(currentSection);
-        binding.setVariable(sectionName, currentSection);
+        sections.put(sectionName, currentSection);
     }
 
     public void setTempo(int tempo) {
@@ -55,23 +62,45 @@ public class DslGroovyModel {
     }
 
     public void createInstrument(String name) {
-        binding.setVariable(name, new Instrument(name));
+        track.addInstrument(new Instrument(name));
     }
 
-    public void setInstrumentType(String name, String type) {
-        ((Instrument) binding.getVariable(name)).setType(type);
+    public void repeatBar(int amount) {
+        for (int i = 0; i < amount; i++) {
+            createBarForInstrument(
+                    currentInstrument.getName(),
+                    String.join(" ", currentBar.getNotes())
+            );
+        }
+    }
+
+    public void setInstrumentType(String name, String strType) {
+        String formattedType = formatInstrumentType(strType);
+        track.findInstrument(name).setType(formattedType);
     }
 
     public void createBarForInstrument(String instrName, String content) {
-        Bar bar = new Bar();
-        ((Instrument) binding.getVariable(instrName)).addBar(bar);
-
-        String[] strNotes = content.split(" ");
-
-        Arrays.asList(strNotes).forEach(bar::addNote);
+        currentBar = new Bar();
+        currentBar.addNotes(Arrays.asList(content.split(" ")));
+        currentInstrument = track.findInstrument(instrName);
+        currentSection.addBar(currentInstrument, currentBar);
     }
 
-    public void setStartAt(String name) {
-        binding.setVariable("start", name);
+    public void playSections(String... names) {
+        Arrays.stream(names).forEach(name-> track.addSection(sections.get(name)));
+    }
+
+    ///////////////////////////////////////////
+    ////////////////// UTILS //////////////////
+    ///////////////////////////////////////////
+
+    private String formatInstrumentType(String raw) {
+        return Arrays.stream(raw.trim().replaceAll("_", " ").split(" "))
+                .map(this::toFirstUppercase)
+                .collect(Collectors.joining("_"));
+    }
+
+    private String toFirstUppercase(String s) {
+        return s.substring(0, 1).toUpperCase() + s.substring(1).toLowerCase();
     }
 }

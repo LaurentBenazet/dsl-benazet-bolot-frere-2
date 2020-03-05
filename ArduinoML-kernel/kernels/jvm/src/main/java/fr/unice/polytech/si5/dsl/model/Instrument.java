@@ -2,40 +2,43 @@ package fr.unice.polytech.si5.dsl.model;
 
 import fr.unice.polytech.si5.dsl.converter.InstrumentToNumber;
 import fr.unice.polytech.si5.dsl.converter.PercussionToNumber;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import java.util.ArrayList;
-import java.util.List;
-
-
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Instrument {
-    private List<Bar> bars = new ArrayList<>();
     private int type;
     private String name;
     private boolean isPercussion = false;
 
-    public Instrument(String name){
+    public Instrument(String name) {
         this.name = name;
-        if (PercussionToNumber.contains(name)) {
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    public void setType(String type) {
+        if (PercussionToNumber.contains(type)) {
             isPercussion = true;
-            type = PercussionToNumber.valueOf(name).getNumber();
+            this.type = PercussionToNumber.valueOf(type).getNumber();
         } else {
-            type = InstrumentToNumber.valueOf(name).getNumber();
+            this.type = InstrumentToNumber.valueOf(type).getNumber();
         }
     }
 
-    public void addBar(Bar bar) {
-        this.bars.add(bar);
-    }
-
-    public List<Bar> getBars() {
-        return bars;
-    }
-
-    public int getType() {
-        return type;
-    }
-
-    public boolean isPercussion(){
-        return isPercussion;
+    @Override
+    public String toString() {
+        return "Instrument{" +
+                ", type=" + type +
+                ", name='" + name + "'" +
+                ", isPercussion='" + isPercussion + "'" +
+                '}';
     }
 }

@@ -1,5 +1,7 @@
 package fr.unice.polytech.si5.dsl.converter;
 
+import java.util.Arrays;
+
 public enum PercussionToNumber {
     Acoustic_Bass_Drum(35),
     Bass_Drum(36),
@@ -32,13 +34,8 @@ public enum PercussionToNumber {
     }
 
     public static boolean contains(String test) {
-
-        for (PercussionToNumber c : PercussionToNumber.values()) {
-            if (c.name().equals(test)) {
-                return true;
-            }
-        }
-
-        return false;
+        return Arrays
+                .stream(PercussionToNumber.values())
+                .anyMatch(c -> c.name().equals(test));
     }
 }

@@ -15,4 +15,3 @@ instr "sd" bar "_ q _ q" repeat 34
 instr "bd" bar "q _ q _" repeat 34
 
 play "Main"
-export "Billie Jean"

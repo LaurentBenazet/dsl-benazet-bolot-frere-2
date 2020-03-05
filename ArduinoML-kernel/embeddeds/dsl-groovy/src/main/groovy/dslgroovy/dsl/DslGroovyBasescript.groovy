@@ -26,16 +26,25 @@ abstract class DslGroovyBasescript extends Script {
     }
 
     def instr(String instrName) {
+
         def closure
         closure = { String content ->
             ((DslGroovyBinding) this.getBinding()).getModel().createBarForInstrument(instrName, content)
-            [bar: closure]
+            [repeat: { int amount ->
+                ((DslGroovyBinding) this.getBinding()).getModel().repeatBar(amount)
+            }, bar : closure]
         }
         [bar: closure]
     }
 
-    def play(String name){
-        model().setStartAt(name)
+    def repeat(int amount) {
+        ((DslGroovyBinding) this.getBinding()).getModel().repeatBar(amount)
+    }
+
+    def play(String... names) {
+        model().playSections(names)
+        String name = model().getTrack().getName()
+        println(model().generateCode(name).toString())
     }
 
     // export name

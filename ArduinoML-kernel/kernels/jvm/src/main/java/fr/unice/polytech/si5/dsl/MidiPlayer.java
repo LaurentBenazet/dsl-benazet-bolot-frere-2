@@ -1,110 +1,131 @@
 package fr.unice.polytech.si5.dsl;
 
-import fr.unice.polytech.si5.dsl.converter.NameToDuration;
-import fr.unice.polytech.si5.dsl.model.*;
 import fr.unice.polytech.si5.dsl.model.Instrument;
 import fr.unice.polytech.si5.dsl.model.Track;
-import fr.unice.polytech.si5.dsl.NoteUtils;
+import fr.unice.polytech.si5.dsl.model.*;
 
 import javax.sound.midi.*;
-
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class MidiPlayer {
 
     private int totalTime;
     private int resolution;
-    private HashMap<Integer,Integer> channelsMapping;
+    private HashMap<Integer, Integer> channelsMapping;
     private Sequencer sequencer;
     private Sequence sequence;
     private javax.sound.midi.Track midiTrack;
 
-    public MidiPlayer(){
-        
+    public MidiPlayer() {
+
         totalTime = 100;
         resolution = 200; // in slices per beat
         try {
             sequencer = MidiSystem.getSequencer();
             sequence = new Sequence(Sequence.PPQ, resolution);
             midiTrack = sequence.createTrack();
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
-        Track track = new Track("Test track");
-        Section section = new Section("intro");
-        section.setBeats(4);
-        section.setTempo(160);
-        
-        Instrument instrument = new Instrument("Acoustic_Bass_Drum");
-        track.addInstrumentChannel(35,9);//for percussion channel is 9 and type will be converted to note
-        List<String> x = new ArrayList<>();
-        for (int i=0;i<8;i++){
-            x.add("e");
-        }
-        Bar bar = new Bar(x);
-        instrument.addBar(bar);
-        x = new ArrayList<>();
-        x.add("e");
-        x.add("e");
-        x.add("e");
-        x.add("e");
-        x.add("e");
-        x.add("e");
-        x.add("e");
-        x.add("e");
-        bar = new Bar(x);
-        instrument.addBar(bar);
-        section.addInstrument(instrument);
+        Track track;
+        Section section;
+        Instrument instrument;
+        Bar bar;
+
+        track = new Track("Test track");
+
+        instrument = new Instrument("Acoustic_Bass_Drum");
+        instrument.setType("Acoustic_Bass_Drum");
+        track.addInstrumentChannel(instrument.getType(), 9);
 
         instrument = new Instrument("Closed_Hi_Hat");
-        track.addInstrumentChannel(42,9);//for percussion channel is 9 and type will be converted to note
-        x = new ArrayList<>();
-        x.add("q");
-        x.add("q");
-        x.add("q");
-        x.add("q");
-        bar = new Bar(x);
-        instrument.addBar(bar);
-        x = new ArrayList<>();
-        x.add("q");
-        x.add("q");
-        x.add("q");
-        x.add("q");
-        bar = new Bar(x);
-        instrument.addBar(bar);
-        section.addInstrument(instrument);
+        instrument.setType("Closed_Hi_Hat");
+        track.addInstrumentChannel(instrument.getType(), 9);
+
+        instrument = new Instrument("Bass");
+        instrument.setType("Bass");
+        track.addInstrumentChannel(instrument.getType(), 9);
+
+        section = new Section("intro");
+        section.setBeats(4);
+        section.setTempo(160);
+
+        bar = new Bar();
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        instrument = track.findInstrument("Acoustic_Bass_Drum");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        instrument = track.findInstrument("Acoustic_Bass_Drum");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("q");
+        bar.addNote("q");
+        bar.addNote("q");
+        bar.addNote("q");
+        instrument = track.findInstrument("Closed_Hi_Hat");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("q");
+        bar.addNote("q");
+        bar.addNote("q");
+        bar.addNote("q");
+        instrument = track.findInstrument("Closed_Hi_Hat");
+        section.addBar(instrument, bar);
 
         track.addSection(section);
-
 
         section = new Section("intro2");
         section.setBeats(4);
         section.setTempo(160);
 
-        instrument = new Instrument("Bass");
-        track.addInstrumentChannel(32,0);//for percussion channel is 9 and type will be converted to note
-        x = new ArrayList<>();
-        for (int i=0;i<8;i++){
-            x.add("e");
-        }
-        bar = new Bar(x);
-        instrument.addBar(bar);
-        x = new ArrayList<>();
-        x.add("e(A)");
-        x.add("e(B)");
-        x.add("e(C)");
-        x.add("e(D)");
-        x.add("e(E)");
-        x.add("e(F)");
-        x.add("e(G)");
-        x.add("e(G)#");
-        bar = new Bar(x);
-        instrument.addBar(bar);
-        section.addInstrument(instrument);
+        bar = new Bar();
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        instrument = track.findInstrument("Bass");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("e(A)");
+        bar.addNote("e(B)");
+        bar.addNote("e(C)");
+        bar.addNote("e(D)");
+        bar.addNote("e(E)");
+        bar.addNote("e(F)");
+        bar.addNote("e(G)");
+        bar.addNote("e(G)#");
+        instrument = track.findInstrument("Bass");
+        section.addBar(instrument, bar);
+
         track.addSection(section);
 
         MidiPlayer midiPlayer = new MidiPlayer();
@@ -114,27 +135,23 @@ public class MidiPlayer {
             e.printStackTrace();
         }
     }
-    
-    private void bindChannel(int channel,int instrumentType){
-        try
-        {
+
+    private void bindChannel(int channel, int instrumentType) {
+        try {
             ShortMessage instrumentChange = new ShortMessage();
             instrumentChange.setMessage(ShortMessage.PROGRAM_CHANGE, channel, instrumentType, 0);
-            midiTrack.add(new MidiEvent(instrumentChange,0));
-        }
-        catch(Exception e)
-        {
+            midiTrack.add(new MidiEvent(instrumentChange, 0));
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-
-    public void playTrack(Track track) throws Exception{
+    public void playTrack(Track track) throws Exception {
         //probably need to change that somehow
         channelsMapping = track.getInstrumentsChannel();
 
         for (Map.Entry<Integer, Integer> entry : channelsMapping.entrySet()) {
-            bindChannel(entry.getValue(),entry.getKey());
+            bindChannel(entry.getValue(), entry.getKey());
         }
 
         for (Section s : track.getSections()) {
@@ -150,9 +167,9 @@ public class MidiPlayer {
         sequencer.setSequence(sequence);
         sequencer.setTempoInBPM(tempo);
         sequencer.start();
-        int x = totalTime/200;
+        int x = totalTime / 200;
         //int durationOfTheTrackMS = nbBar * nbBeatPerBar * 60000 / tempo;
-        int durationOfTheTrackMS = (x+1) * 60000 / tempo;
+        int durationOfTheTrackMS = (x + 1) * 60000 / tempo;
         System.out.println("sleeping " + (durationOfTheTrackMS) + "ms");
         Thread.sleep(durationOfTheTrackMS);
         System.out.println("stop sleeping");
@@ -160,42 +177,45 @@ public class MidiPlayer {
         sequencer.close();
     }
 
-    private void playSection(Section section){
+    private void playSection(Section section) {
         int maxTime = 0;
-        for (Instrument i : section.getInstruments()) {
-            int t = playInstrument(i);
-            if(t>maxTime){
+        Map<Instrument, List<Bar>> partition = section.getPartition();
+
+        for (Instrument instr : partition.keySet()) {
+            int t = playInstrument(instr, partition.get(instr));
+
+            if (t > maxTime) {
                 maxTime = t;
             }
         }
-        totalTime = totalTime + maxTime;
+        totalTime += maxTime;
     }
 
-    private int playInstrument(Instrument instrument){
+    private int playInstrument(Instrument instrument, List<Bar> bars) {
         int time = 0;
-        for (Bar b : instrument.getBars()) {
-            int t = playBar(b,instrument,time+totalTime);
+        for (Bar bar : bars) {
+            int t = playBar(bar, instrument, time + totalTime);
             time = time + t;
         }
         return time;
     }
 
-    private int playBar(Bar bar,Instrument instrument,int timePassed){
+    private int playBar(Bar bar, Instrument instrument, int timePassed) {
         int time = 0;
-        for (Note n : bar.getRealnotes()) {
-            int t = playNote(n,time+timePassed,instrument);
+        for (Note note : bar.getRealnotes()) {
+            int t = playNote(note, time + timePassed, instrument);
             time = time + t;
         }
         return time;
     }
 
-    private int playNote(Note note,int timeBeforeNote,Instrument instrument){
+    private int playNote(Note note, int timeBeforeNote, Instrument instrument) {
         int noteValue = note.getNoteOffset();
         int channel = channelsMapping.get(instrument.getType());
-        if(channel == 9){
+        if (channel == 9) {
             noteValue = instrument.getType();
         }
-        NoteUtils.addNote(midiTrack,channel,noteValue,timeBeforeNote,note.getVelocity(),note.getDuration());
-        return (int) (note.getDuration()*resolution);
+        NoteUtils.addNote(midiTrack, channel, noteValue, timeBeforeNote, note.getVelocity(), note.getDuration());
+        return (int) (note.getDuration() * resolution);
     }
 }
