@@ -25,7 +25,7 @@ public class NoteUtils {
         final int NOTEOFF = 128;
 
         int realNote = 60;
-        long delay = (long)(duration-1);
+        long delay = (long)(duration*200)-1;
         if(channel==9){
             realNote = note;
             delay = 1;
@@ -56,7 +56,7 @@ public class NoteUtils {
                         int octave = (key / 12) - 1;
                         int note = key % 12;
                         //String noteName = NOTE_NAMES[note];
-                        String noteName = "coucou";
+                        String noteName = "noteName";
                         int velocity = sm.getData2();
                         System.out.println("Note on, " + noteName + octave + " key=" + key + " velocity: " + velocity);
                     } else if (sm.getCommand() == NOTE_OFF) {
@@ -64,7 +64,7 @@ public class NoteUtils {
                         int octave = (key / 12) - 1;
                         int note = key % 12;
                         //String noteName = NOTE_NAMES[note];
-                        String noteName = "coucou";
+                        String noteName = "noteName";
                         int velocity = sm.getData2();
                         System.out.println("Note off, " + noteName + octave + " key=" + key + " velocity: " + velocity);
                     } else {
