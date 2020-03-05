@@ -12,8 +12,6 @@ import java.util.List;
 
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
 public class Bar {
     private List<String> notes = new ArrayList<>();
     private List<Note> realnotes = new ArrayList<>();
