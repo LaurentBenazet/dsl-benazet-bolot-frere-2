@@ -13,7 +13,7 @@ public class Note {
     private int velocity = 50;
     private double duration;
     private double offset;
-    private int noteOffset;
+    private int noteOffset = 0;
 
     public Note(double duration){
         this.duration = duration;

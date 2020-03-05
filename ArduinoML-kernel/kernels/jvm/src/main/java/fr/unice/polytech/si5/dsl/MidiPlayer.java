@@ -1,5 +1,6 @@
 package fr.unice.polytech.si5.dsl;
 
+import fr.unice.polytech.si5.dsl.converter.NameToDuration;
 import fr.unice.polytech.si5.dsl.model.*;
 import fr.unice.polytech.si5.dsl.model.Instrument;
 import fr.unice.polytech.si5.dsl.model.Track;
@@ -33,15 +34,13 @@ public class MidiPlayer {
 
     public static void main(String[] args){
 
-
         Track track = new Track("Test track");
         Section section = new Section("intro");
         section.setBeats(4);
         section.setTempo(160);
         
-        Instrument instrument = new Instrument("ClosedHihat");
+        Instrument instrument = new Instrument("Acoustic_Bass_Drum");
         track.addInstrumentChannel(35,9);//for percussion channel is 9 and type will be converted to note
-        instrument.setType(35);
         List<String> x = new ArrayList<>();
         for (int i=0;i<8;i++){
             x.add("e");
@@ -61,9 +60,8 @@ public class MidiPlayer {
         instrument.addBar(bar);
         section.addInstrument(instrument);
 
-        instrument = new Instrument("DrumAcoustic");
+        instrument = new Instrument("Closed_Hi_Hat");
         track.addInstrumentChannel(42,9);//for percussion channel is 9 and type will be converted to note
-        instrument.setType(42);
         x = new ArrayList<>();
         x.add("q");
         x.add("q");
@@ -87,9 +85,8 @@ public class MidiPlayer {
         section.setBeats(4);
         section.setTempo(160);
 
-        instrument = new Instrument("ElectricTruc");
-        track.addInstrumentChannel(40,9);//for percussion channel is 9 and type will be converted to note
-        instrument.setType(40);
+        instrument = new Instrument("Bass");
+        track.addInstrumentChannel(32,0);//for percussion channel is 9 and type will be converted to note
         x = new ArrayList<>();
         for (int i=0;i<8;i++){
             x.add("e");
@@ -97,14 +94,14 @@ public class MidiPlayer {
         bar = new Bar(x);
         instrument.addBar(bar);
         x = new ArrayList<>();
-        x.add("e");
-        x.add("e");
-        x.add("e");
-        x.add("e");
-        x.add("e");
-        x.add("e");
-        x.add("e");
-        x.add("e");
+        x.add("e(A)");
+        x.add("e(B)");
+        x.add("e(C)");
+        x.add("e(D)");
+        x.add("e(E)");
+        x.add("e(F)");
+        x.add("e(G)");
+        x.add("e(G)#");
         bar = new Bar(x);
         instrument.addBar(bar);
         section.addInstrument(instrument);
@@ -153,8 +150,9 @@ public class MidiPlayer {
         sequencer.setSequence(sequence);
         sequencer.setTempoInBPM(tempo);
         sequencer.start();
+        int x = totalTime/200;
         //int durationOfTheTrackMS = nbBar * nbBeatPerBar * 60000 / tempo;
-        int durationOfTheTrackMS = (12+1) * 60000 / tempo;
+        int durationOfTheTrackMS = (x+1) * 60000 / tempo;
         System.out.println("sleeping " + (durationOfTheTrackMS) + "ms");
         Thread.sleep(durationOfTheTrackMS);
         System.out.println("stop sleeping");
