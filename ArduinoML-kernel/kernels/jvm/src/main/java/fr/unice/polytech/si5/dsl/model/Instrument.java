@@ -9,15 +9,16 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
 public class Instrument {
     private int type;
+    private String typeName;
     private String name;
     private boolean isPercussion = false;
 
-    public Instrument(String name) {
+    public Instrument(String name,String typeName) {
         this.name = name;
+        this.typeName = typeName;
+        this.setType(typeName);
     }
 
     public void setType(int type) {

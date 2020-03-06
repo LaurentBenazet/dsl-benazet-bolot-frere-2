@@ -27,7 +27,17 @@ public class Bar {
         }
 
         if (in.length > 1) {
-            n.setNoteOffset(getTone(in[1].split("\\)")[0]));
+            if(in[1].split("\\)")[0].split("\\+").length>1){
+                String[] test = in[1].split("\\)")[0].split("\\+");
+                int octave = Integer.parseInt(test[1]);
+                n.setNoteOffset(getTone(test[0])+(12*octave));
+            } else if(in[1].split("\\)")[0].split("-").length>1){
+                String[] test = in[1].split("\\)")[0].split("-");
+                int octave = Integer.parseInt(test[1]);
+                n.setNoteOffset(getTone(test[0])-(12*octave));
+            } else {
+                n.setNoteOffset(getTone(in[1].split("\\)")[0]));
+            }
         }
 
         realnotes.add(n);

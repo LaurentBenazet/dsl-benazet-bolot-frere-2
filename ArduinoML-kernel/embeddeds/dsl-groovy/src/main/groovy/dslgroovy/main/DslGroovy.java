@@ -17,7 +17,8 @@ public class DslGroovy {
         if (args.length > 0) {
             dsl.eval(new File(args[0]));
         } else {
-            System.out.println("/!\\ Missing arg: Please specify the path to a Groovy script file to execute");
+            dsl.eval(new File("D:\\SI5\\DSL\\rythmml\\ArduinoML-kernel\\embeddeds\\dsl-groovy\\src\\main\\resources\\scripts\\Test.groovy"));
+            //System.out.println("/!\\ Missing arg: Please specify the path to a Groovy script file to execute");
         }
     }
 }

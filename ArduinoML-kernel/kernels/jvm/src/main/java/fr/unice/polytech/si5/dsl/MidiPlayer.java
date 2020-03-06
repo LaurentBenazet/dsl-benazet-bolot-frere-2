@@ -40,15 +40,15 @@ public class MidiPlayer {
 
         track = new Track("Test track");
 
-        instrument = new Instrument("Acoustic_Bass_Drum");
+        instrument = new Instrument("bd","Acoustic_Bass_Drum");
         instrument.setType("Acoustic_Bass_Drum");
         track.addInstrumentChannel(instrument.getType(), 9);
 
-        instrument = new Instrument("Closed_Hi_Hat");
+        instrument = new Instrument("ch","Closed_Hi_Hat");
         instrument.setType("Closed_Hi_Hat");
         track.addInstrumentChannel(instrument.getType(), 9);
 
-        instrument = new Instrument("Bass");
+        instrument = new Instrument("bass","Bass");
         instrument.setType("Bass");
         track.addInstrumentChannel(instrument.getType(), 9);
 
@@ -154,9 +154,8 @@ public class MidiPlayer {
             bindChannel(entry.getValue(), entry.getKey());
         }
 
-        for (Section s : track.getSections()) {
-            playSection(s);
-            //add time passed
+        for (String s : track.getSectionOrder()) {
+            playSection(track.getCorrespondingSection(s));
         }
 
         int tempo = 60;
