@@ -154,8 +154,8 @@ public class MidiPlayer {
             bindChannel(entry.getValue(), entry.getKey());
         }
 
-        for (String s : track.getSectionOrder()) {
-            playSection(track.getCorrespondingSection(s));
+        for (Section s : track.getSections()) {
+            playSection(s);
         }
 
         int tempo = 60;

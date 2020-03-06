@@ -50,13 +50,15 @@ public class Tester {
             bindChannel(entry.getValue(), entry.getKey());
         }
 
-        for (String s : track.getSectionOrder()) {
-            playSection(track.getCorrespondingSection(s));
+        for (Section s : track.getSections()) {
+            playSection(s);
         }
 
         int tempo = 118;
 
         NoteUtils.analyzeSequence(sequence);
+
+        Thread.sleep(5000);
 
         sequencer.open();
         sequencer.setSequence(sequence);
@@ -106,9 +108,11 @@ public class Tester {
 
     private int playNote(Note note, int timeBeforeNote, Instrument instrument) {
         int noteValue = note.getNoteOffset();
-        int channel = channelsMapping.get(instrument.getType());
-        if (channel == 9) {
+        int channel = 9;
+        if (instrument.isPercussion()) {
             noteValue = instrument.getType();
+        } else {
+            channel = channelsMapping.get(instrument.getType());
         }
         NoteUtils.addNote(midiTrack, channel, noteValue, timeBeforeNote, note.getVelocity(), note.getDuration());
         return (int) (note.getDuration() * resolution);

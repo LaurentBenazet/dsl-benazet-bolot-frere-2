@@ -16,25 +16,20 @@ import java.util.List;
 @NoArgsConstructor
 public class Track {
     private Collection<Instrument> instruments = new ArrayList<>();
-    private HashMap<String,Section> sections = new HashMap<>();
+    private List<Section> sections = new ArrayList<>();
     private String name;
     private HashMap<Integer, Integer> instrumentsChannel = new HashMap<>();
-    private List<String> sectionOrder = new ArrayList<>();
 
     public Track(String name) {
         this.name = name;
     }
 
     public void addSection(Section section) {
-        sections.put(section.getName(),section);
+        sections.add(section);
     }
 
     public void addInstrumentChannel(int instrumentType, int channel) {
         instrumentsChannel.put(instrumentType, channel);
-    }
-
-    public Section getCorrespondingSection(String name){
-        return sections.get(name);
     }
 
     public void addInstrument(Instrument instrument){
