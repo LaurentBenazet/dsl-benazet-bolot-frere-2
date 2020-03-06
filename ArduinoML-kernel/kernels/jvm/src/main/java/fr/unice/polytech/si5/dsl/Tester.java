@@ -132,28 +132,28 @@ public class Tester {
         //AFTER
         instrument = new Instrument("ch","Closed_Hi_Hat");
         if(!instrument.isPercussion()){
-            track.addInstrumentChannel(42, chan);
+            track.addInstrumentChannel(instrument.getType(), chan);
             chan++;
         }
         track.addInstrument(instrument);
 
         instrument = new Instrument("sd","Acoustic_Snare");
         if(!instrument.isPercussion()){
-            track.addInstrumentChannel(42, chan);
+            track.addInstrumentChannel(instrument.getType(), chan);
             chan++;
         }
         track.addInstrument(instrument);
 
         instrument = new Instrument("bd","Bass_Drum");
         if(!instrument.isPercussion()){
-            track.addInstrumentChannel(42, chan);
+            track.addInstrumentChannel(instrument.getType(), chan);
             chan++;
         }
         track.addInstrument(instrument);
 
         instrument = new Instrument("piano","Piano");
         if(!instrument.isPercussion()){
-            track.addInstrumentChannel(42, chan);
+            track.addInstrumentChannel(instrument.getType(), chan);
             chan++;
         }
         track.addInstrument(instrument);
