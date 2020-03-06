@@ -95,12 +95,6 @@ public class DslGroovyModel {
     ///////////////////////////////////////////
 
     private String formatInstrumentType(String raw) {
-        return Arrays.stream(raw.trim().replaceAll("_", " ").split(" "))
-                .map(this::toFirstUppercase)
-                .collect(Collectors.joining("_"));
-    }
-
-    private String toFirstUppercase(String s) {
-        return s.substring(0, 1).toUpperCase() + s.substring(1).toLowerCase();
+        return raw.trim().toUpperCase().replaceAll(" ", "_");
     }
 }

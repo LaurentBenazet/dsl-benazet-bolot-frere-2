@@ -16,7 +16,6 @@ import java.util.Map;
 @NoArgsConstructor
 public class Section {
     private String name;
-    private int tempo;
     private int beats;
     private Map<Instrument, List<Bar>> partition = new HashMap<>();
 
