@@ -54,7 +54,7 @@ public class DslGroovyModel {
     }
 
     public void setTempo(int tempo) {
-        currentSection.setTempo(tempo);
+        track.setTempo(tempo);
     }
 
     public void setBeats(int beats) {

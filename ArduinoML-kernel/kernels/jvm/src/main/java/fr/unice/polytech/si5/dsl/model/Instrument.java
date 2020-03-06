@@ -2,9 +2,7 @@ package fr.unice.polytech.si5.dsl.model;
 
 import fr.unice.polytech.si5.dsl.converter.InstrumentToNumber;
 import fr.unice.polytech.si5.dsl.converter.PercussionToNumber;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
@@ -15,9 +13,12 @@ public class Instrument {
     private String name;
     private boolean isPercussion = false;
 
-    public Instrument(String name,String typeName) {
+    public Instrument(String name) {
         this.name = name;
-        this.typeName = typeName;
+    }
+
+    public Instrument(String name, String typeName) {
+        this.name = name;
         this.setType(typeName);
     }
 
@@ -26,6 +27,8 @@ public class Instrument {
     }
 
     public void setType(String type) {
+        this.typeName = type;
+
         if (PercussionToNumber.contains(type)) {
             isPercussion = true;
             this.type = PercussionToNumber.valueOf(type).getNumber();

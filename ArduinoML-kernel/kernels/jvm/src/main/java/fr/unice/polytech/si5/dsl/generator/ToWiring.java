@@ -16,25 +16,28 @@ public class ToWiring extends Visitor<StringBuffer> {
 
     public ToWiring() {
         this.result = new StringBuffer();
-
-        addStuff();
     }
 
     private void w(String s) {
         result.append(String.format("%s\n", s));
     }
 
-
     @Override
     public void visit(App app) {
+        Track track = app.getTrack();
+
+        addUtilsMethods(track.getTempo());
+
+        w("");
         w("    public static void main(String[] args) {");
         w("        Track track;");
         w("        Section section;");
         w("        Instrument instrument;");
         w("        Bar bar;");
+        w("        int chan = 0;");
         w("");
 
-        visit(app.getTrack());
+        visit(track);
 
         w("        Tester midiPlayer = new Tester();"); //TODO CHANGE THAT
         w("        try {");
@@ -65,6 +68,13 @@ public class ToWiring extends Visitor<StringBuffer> {
         w("        track.addInstrumentChannel(" + instrument.getType() + ", 9);");
         w("        track.addInstrument(instrument);");
         w("");
+
+        w("        instrument = new Instrument(\"" + instrument.getName() + "\", \"" + instrument.getTypeName() + "\");");
+        w("        if(!instrument.isPercussion()){");
+        w("            track.addInstrumentChannel(instrument.getType(), chan);");
+        w("            chan++;");
+        w("        }");
+        w("        track.addInstrument(instrument);");
     }
 
     @Override
@@ -96,7 +106,7 @@ public class ToWiring extends Visitor<StringBuffer> {
         w("");
     }
 
-    public void addStuff() {
+    public void addUtilsMethods(int tempo) {
 
         w("package fr.unice.polytech.si5.dsl;");
         w("");
@@ -155,7 +165,7 @@ public class ToWiring extends Visitor<StringBuffer> {
         w("            //add time passed");
         w("        }");
         w("");
-        w("        int tempo = 60;");
+        w("        int tempo = " + tempo + ";");
         w("");
         w("        NoteUtils.analyzeSequence(sequence);");
         w("");

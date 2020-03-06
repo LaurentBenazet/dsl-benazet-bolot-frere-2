@@ -1,13 +1,13 @@
 package scripts
 
 track "Johnny B Goode"
+tempo 170
 
 instrument "rc" type "ride cymbal"
 instrument "sd" type "acoustic snare"
 instrument "bd" type "bass drum"
 
 section "Intro"
-tempo 170
 beats 4
 
 instr "rc" bar "_ _ _ _" bar "_ _ _ _"
@@ -16,7 +16,6 @@ instr "bd" bar "_ _ _ _" bar "_ _ _ _"
 
 
 section "Main"
-tempo 170
 beats 4
 
 instr "rc" bar "e e e e e e e e" repeat 55

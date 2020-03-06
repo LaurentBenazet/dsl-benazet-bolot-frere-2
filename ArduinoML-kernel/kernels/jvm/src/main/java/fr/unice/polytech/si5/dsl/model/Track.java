@@ -18,6 +18,7 @@ public class Track {
     private Collection<Instrument> instruments = new ArrayList<>();
     private List<Section> sections = new ArrayList<>();
     private String name;
+    private int tempo;
     private HashMap<Integer, Integer> instrumentsChannel = new HashMap<>();
 
     public Track(String name) {
