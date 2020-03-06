@@ -129,7 +129,7 @@ public class Tester {
         track.addInstrumentChannel(42, 9);
         track.addInstrument(instrument);
 
-        instrument = new Instrument("ch", "Closed_Hi_Hat");
+        instrument = new Instrument("ch", "CLOSED_HI_HAT");
         if(!instrument.isPercussion()){
             track.addInstrumentChannel(instrument.getType(), chan);
             chan++;
@@ -140,7 +140,7 @@ public class Tester {
         track.addInstrumentChannel(38, 9);
         track.addInstrument(instrument);
 
-        instrument = new Instrument("sd", "Acoustic_Snare");
+        instrument = new Instrument("sd", "ACOUSTIC_SNARE");
         if(!instrument.isPercussion()){
             track.addInstrumentChannel(instrument.getType(), chan);
             chan++;
@@ -151,7 +151,7 @@ public class Tester {
         track.addInstrumentChannel(36, 9);
         track.addInstrument(instrument);
 
-        instrument = new Instrument("bd", "Bass_Drum");
+        instrument = new Instrument("bd", "BASS_DRUM");
         if(!instrument.isPercussion()){
             track.addInstrumentChannel(instrument.getType(), chan);
             chan++;
@@ -162,7 +162,7 @@ public class Tester {
         track.addInstrumentChannel(0, 9);
         track.addInstrument(instrument);
 
-        instrument = new Instrument("piano", "Piano");
+        instrument = new Instrument("piano", "PIANO");
         if(!instrument.isPercussion()){
             track.addInstrumentChannel(instrument.getType(), chan);
             chan++;
@@ -171,237 +171,12 @@ public class Tester {
 
         section = new Section("No piano");
         section.setBeats(4);
-        section.setTempo(0);
         bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("_");
-        bar.addNote("_");
-        bar.addNote("_");
-        instrument = track.findInstrument("piano");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("_");
-        bar.addNote("_");
-        bar.addNote("_");
-        instrument = track.findInstrument("piano");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("_");
-        bar.addNote("_");
-        bar.addNote("_");
-        instrument = track.findInstrument("piano");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("_");
-        bar.addNote("_");
-        bar.addNote("_");
-        instrument = track.findInstrument("piano");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("_");
-        bar.addNote("_");
-        bar.addNote("_");
-        instrument = track.findInstrument("piano");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("_");
-        bar.addNote("_");
-        bar.addNote("_");
-        instrument = track.findInstrument("piano");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("_");
-        bar.addNote("_");
-        bar.addNote("_");
-        instrument = track.findInstrument("piano");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("_");
-        bar.addNote("_");
-        bar.addNote("_");
-        instrument = track.findInstrument("piano");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("_");
-        bar.addNote("_");
-        bar.addNote("_");
-        instrument = track.findInstrument("piano");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("_");
-        bar.addNote("_");
-        bar.addNote("_");
-        instrument = track.findInstrument("piano");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("_");
-        bar.addNote("_");
-        bar.addNote("_");
-        instrument = track.findInstrument("piano");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("_");
-        bar.addNote("_");
-        bar.addNote("_");
-        instrument = track.findInstrument("piano");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("_");
-        bar.addNote("_");
-        bar.addNote("_");
-        instrument = track.findInstrument("piano");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("_");
-        bar.addNote("_");
-        bar.addNote("_");
-        instrument = track.findInstrument("piano");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("_");
-        bar.addNote("_");
-        bar.addNote("_");
-        instrument = track.findInstrument("piano");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
         bar.addNote("q");
         bar.addNote("_");
         bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
         bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
+        instrument = track.findInstrument("bd");
         section.addBar(instrument, bar);
 
         bar = new Bar();
@@ -425,298 +200,269 @@ public class Tester {
         section.addBar(instrument, bar);
 
         bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
         bar.addNote("_");
-        bar.addNote("q");
         bar.addNote("_");
-        instrument = track.findInstrument("bd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
         bar.addNote("_");
-        bar.addNote("q");
         bar.addNote("_");
-        instrument = track.findInstrument("bd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
+        instrument = track.findInstrument("piano");
         section.addBar(instrument, bar);
 
         track.addSection(section);
 
         section = new Section("Main");
         section.setBeats(4);
-        section.setTempo(0);
+        bar = new Bar();
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        instrument = track.findInstrument("bd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        instrument = track.findInstrument("bd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        instrument = track.findInstrument("bd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        instrument = track.findInstrument("bd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        instrument = track.findInstrument("bd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        instrument = track.findInstrument("bd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        instrument = track.findInstrument("bd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        instrument = track.findInstrument("bd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        instrument = track.findInstrument("bd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        instrument = track.findInstrument("sd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        instrument = track.findInstrument("sd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        instrument = track.findInstrument("sd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        instrument = track.findInstrument("sd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        instrument = track.findInstrument("sd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        instrument = track.findInstrument("sd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        instrument = track.findInstrument("sd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        instrument = track.findInstrument("sd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        instrument = track.findInstrument("sd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        instrument = track.findInstrument("ch");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        instrument = track.findInstrument("ch");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        instrument = track.findInstrument("ch");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        instrument = track.findInstrument("ch");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        instrument = track.findInstrument("ch");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        instrument = track.findInstrument("ch");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        instrument = track.findInstrument("ch");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        instrument = track.findInstrument("ch");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        instrument = track.findInstrument("ch");
+        section.addBar(instrument, bar);
+
         bar = new Bar();
         bar.addNote("_");
         bar.addNote("_");
@@ -726,527 +472,527 @@ public class Tester {
         section.addBar(instrument, bar);
 
         bar = new Bar();
-        bar.addNote("-");
-        bar.addNote("e(D)");
-        bar.addNote("e(D)");
-        bar.addNote("e(D)");
-        bar.addNote("e(D)");
-        bar.addNote("e(C)");
-        bar.addNote("e(D)");
-        bar.addNote("e(C)");
-        instrument = track.findInstrument("piano");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("-");
-        bar.addNote("q(D)");
-        bar.addNote("s(C)");
-        bar.addNote("s(D)");
-        bar.addNote("e(C)");
-        bar.addNote("e(D)");
-        bar.addNote("e(D)");
-        bar.addNote("-");
-        instrument = track.findInstrument("piano");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("-");
-        bar.addNote("e(D)");
-        bar.addNote("e(D)");
-        bar.addNote("e(D)");
-        bar.addNote("e(D)");
-        bar.addNote("e(C)");
-        bar.addNote("e(D)");
-        bar.addNote("e(C)");
-        instrument = track.findInstrument("piano");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("-");
-        bar.addNote("q(D)");
-        bar.addNote("q(C)");
-        bar.addNote("e(D)");
+        bar.addNote("_");
         bar.addNote("e(C#)");
-        bar.addNote("e(E)");
+        bar.addNote("e(C#)");
+        bar.addNote("e(C#)");
+        bar.addNote("e(B)");
+        bar.addNote("e(A)");
+        bar.addNote("e(B)");
         instrument = track.findInstrument("piano");
         section.addBar(instrument, bar);
 
         bar = new Bar();
-        bar.addNote("q(E)");
+        bar.addNote("e(B)");
+        bar.addNote("q(C#)");
+        bar.addNote("s(B)");
+        bar.addNote("s(A)");
+        bar.addNote("e(B)");
+        bar.addNote("e(A)");
+        bar.addNote("e(C#)");
+        bar.addNote("-");
+        instrument = track.findInstrument("piano");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("-");
+        bar.addNote("e(C#)");
+        bar.addNote("e(C#)");
+        bar.addNote("e(C#)");
+        bar.addNote("e(C#)");
+        bar.addNote("e(B)");
+        bar.addNote("e(A)");
+        bar.addNote("e(B)");
+        instrument = track.findInstrument("piano");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("e(B)");
+        bar.addNote("e(A)");
+        bar.addNote("e(C#)");
+        bar.addNote("q(B)");
+        bar.addNote("e(A)");
+        bar.addNote("e(G#-1)");
+        bar.addNote("e(F#-1)");
+        instrument = track.findInstrument("piano");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("q(F#-1)");
         bar.addNote("_");
         bar.addNote("_");
-        bar.addNote("s(E)");
-        bar.addNote("s(F)");
-        bar.addNote("e(D)");
+        bar.addNote("s(F#)");
+        bar.addNote("s(G#)");
+        bar.addNote("e(F#)");
         instrument = track.findInstrument("piano");
         section.addBar(instrument, bar);
 
         bar = new Bar();
-        bar.addNote("q(D)");
-        bar.addNote("s(E)");
-        bar.addNote("s(F)");
-        bar.addNote("e(D)");
-        bar.addNote("q(D)");
-        bar.addNote("s(E)");
-        bar.addNote("s(F)");
-        bar.addNote("e(D)");
+        bar.addNote("e(F#)");
+        bar.addNote("-");
+        bar.addNote("s(F#)");
+        bar.addNote("s(G#)");
+        bar.addNote("e(F#)");
+        bar.addNote("e(F#)");
+        bar.addNote("-");
+        bar.addNote("s(F#)");
+        bar.addNote("s(G#)");
+        bar.addNote("e(F#)");
         instrument = track.findInstrument("piano");
         section.addBar(instrument, bar);
 
         bar = new Bar();
-        bar.addNote("q(D)");
-        bar.addNote("e(D)");
+        bar.addNote("e(F#)");
         bar.addNote("-");
         bar.addNote("_");
         bar.addNote("_");
+        bar.addNote("_");
         instrument = track.findInstrument("piano");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
         section.addBar(instrument, bar);
 
         track.addSection(section);
 
         section = new Section("Transition");
         section.setBeats(4);
-        section.setTempo(0);
+        bar = new Bar();
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        instrument = track.findInstrument("bd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        instrument = track.findInstrument("bd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        instrument = track.findInstrument("bd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        instrument = track.findInstrument("bd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        instrument = track.findInstrument("bd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        instrument = track.findInstrument("sd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        instrument = track.findInstrument("sd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        instrument = track.findInstrument("sd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        instrument = track.findInstrument("sd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        instrument = track.findInstrument("sd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        instrument = track.findInstrument("ch");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        instrument = track.findInstrument("ch");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        instrument = track.findInstrument("ch");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        instrument = track.findInstrument("ch");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        instrument = track.findInstrument("ch");
+        section.addBar(instrument, bar);
+
         bar = new Bar();
         bar.addNote("-");
-        bar.addNote("e(E)");
-        bar.addNote("e(D)");
-        bar.addNote("q(C)");
-        bar.addNote("e(D)");
-        bar.addNote("e(C#)");
-        bar.addNote("e(E)");
+        bar.addNote("e(F#-1)");
+        bar.addNote("e(A)");
+        bar.addNote("q(B)");
+        bar.addNote("e(A)");
+        bar.addNote("e(G#-1)");
+        bar.addNote("e(F#-1)");
         instrument = track.findInstrument("piano");
         section.addBar(instrument, bar);
 
         bar = new Bar();
-        bar.addNote("q(E)");
-        bar.addNote("e(E)");
+        bar.addNote("q(F#-1)");
         bar.addNote("_");
+        bar.addNote("_");
+        bar.addNote("s(F#)");
+        bar.addNote("s(G#)");
+        bar.addNote("e(F#)");
+        instrument = track.findInstrument("piano");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("e(F#)");
         bar.addNote("-");
-        bar.addNote("s(E)");
-        bar.addNote("s(F)");
-        bar.addNote("e(D)");
-        instrument = track.findInstrument("piano");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q(D)");
-        bar.addNote("s(E)");
-        bar.addNote("s(F)");
-        bar.addNote("e(D)");
-        bar.addNote("q(D)");
-        bar.addNote("s(E)");
-        bar.addNote("s(F)");
-        bar.addNote("e(D)");
-        instrument = track.findInstrument("piano");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q(D)");
-        bar.addNote("e(D)");
+        bar.addNote("s(F#)");
+        bar.addNote("s(G#)");
+        bar.addNote("e(F#)");
+        bar.addNote("e(F#)");
         bar.addNote("-");
-        bar.addNote("_");
-        bar.addNote("_");
+        bar.addNote("s(F#)");
+        bar.addNote("s(G#)");
+        bar.addNote("e(F#)");
         instrument = track.findInstrument("piano");
         section.addBar(instrument, bar);
 
         bar = new Bar();
+        bar.addNote("q(F#)");
         bar.addNote("_");
-        bar.addNote("q");
         bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
         bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
+        instrument = track.findInstrument("piano");
         section.addBar(instrument, bar);
 
         track.addSection(section);
 
         section = new Section("Main");
         section.setBeats(4);
-        section.setTempo(0);
+        bar = new Bar();
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        instrument = track.findInstrument("bd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        instrument = track.findInstrument("bd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        instrument = track.findInstrument("bd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        instrument = track.findInstrument("bd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        instrument = track.findInstrument("bd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        instrument = track.findInstrument("bd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        instrument = track.findInstrument("bd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        instrument = track.findInstrument("bd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        instrument = track.findInstrument("bd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        instrument = track.findInstrument("sd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        instrument = track.findInstrument("sd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        instrument = track.findInstrument("sd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        instrument = track.findInstrument("sd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        instrument = track.findInstrument("sd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        instrument = track.findInstrument("sd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        instrument = track.findInstrument("sd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        instrument = track.findInstrument("sd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("_");
+        bar.addNote("q");
+        bar.addNote("_");
+        bar.addNote("q");
+        instrument = track.findInstrument("sd");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        instrument = track.findInstrument("ch");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        instrument = track.findInstrument("ch");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        instrument = track.findInstrument("ch");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        instrument = track.findInstrument("ch");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        instrument = track.findInstrument("ch");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        instrument = track.findInstrument("ch");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        instrument = track.findInstrument("ch");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        instrument = track.findInstrument("ch");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        bar.addNote("e");
+        instrument = track.findInstrument("ch");
+        section.addBar(instrument, bar);
+
         bar = new Bar();
         bar.addNote("_");
         bar.addNote("_");
@@ -1256,332 +1002,82 @@ public class Tester {
         section.addBar(instrument, bar);
 
         bar = new Bar();
-        bar.addNote("-");
-        bar.addNote("e(D)");
-        bar.addNote("e(D)");
-        bar.addNote("e(D)");
-        bar.addNote("e(D)");
-        bar.addNote("e(C)");
-        bar.addNote("e(D)");
-        bar.addNote("e(C)");
-        instrument = track.findInstrument("piano");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("-");
-        bar.addNote("q(D)");
-        bar.addNote("s(C)");
-        bar.addNote("s(D)");
-        bar.addNote("e(C)");
-        bar.addNote("e(D)");
-        bar.addNote("e(D)");
-        bar.addNote("-");
-        instrument = track.findInstrument("piano");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("-");
-        bar.addNote("e(D)");
-        bar.addNote("e(D)");
-        bar.addNote("e(D)");
-        bar.addNote("e(D)");
-        bar.addNote("e(C)");
-        bar.addNote("e(D)");
-        bar.addNote("e(C)");
-        instrument = track.findInstrument("piano");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("-");
-        bar.addNote("q(D)");
-        bar.addNote("q(C)");
-        bar.addNote("e(D)");
+        bar.addNote("_");
         bar.addNote("e(C#)");
-        bar.addNote("e(E)");
+        bar.addNote("e(C#)");
+        bar.addNote("e(C#)");
+        bar.addNote("e(B)");
+        bar.addNote("e(A)");
+        bar.addNote("e(B)");
         instrument = track.findInstrument("piano");
         section.addBar(instrument, bar);
 
         bar = new Bar();
-        bar.addNote("q(E)");
+        bar.addNote("e(B)");
+        bar.addNote("q(C#)");
+        bar.addNote("s(B)");
+        bar.addNote("s(A)");
+        bar.addNote("e(B)");
+        bar.addNote("e(A)");
+        bar.addNote("e(C#)");
+        bar.addNote("-");
+        instrument = track.findInstrument("piano");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("-");
+        bar.addNote("e(C#)");
+        bar.addNote("e(C#)");
+        bar.addNote("e(C#)");
+        bar.addNote("e(C#)");
+        bar.addNote("e(B)");
+        bar.addNote("e(A)");
+        bar.addNote("e(B)");
+        instrument = track.findInstrument("piano");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("e(B)");
+        bar.addNote("e(A)");
+        bar.addNote("e(C#)");
+        bar.addNote("q(B)");
+        bar.addNote("e(A)");
+        bar.addNote("e(G#-1)");
+        bar.addNote("e(F#-1)");
+        instrument = track.findInstrument("piano");
+        section.addBar(instrument, bar);
+
+        bar = new Bar();
+        bar.addNote("q(F#-1)");
         bar.addNote("_");
         bar.addNote("_");
-        bar.addNote("s(E)");
-        bar.addNote("s(F)");
-        bar.addNote("e(D)");
+        bar.addNote("s(F#)");
+        bar.addNote("s(G#)");
+        bar.addNote("e(F#)");
         instrument = track.findInstrument("piano");
         section.addBar(instrument, bar);
 
         bar = new Bar();
-        bar.addNote("q(D)");
-        bar.addNote("s(E)");
-        bar.addNote("s(F)");
-        bar.addNote("e(D)");
-        bar.addNote("q(D)");
-        bar.addNote("s(E)");
-        bar.addNote("s(F)");
-        bar.addNote("e(D)");
+        bar.addNote("e(F#)");
+        bar.addNote("-");
+        bar.addNote("s(F#)");
+        bar.addNote("s(G#)");
+        bar.addNote("e(F#)");
+        bar.addNote("e(F#)");
+        bar.addNote("-");
+        bar.addNote("s(F#)");
+        bar.addNote("s(G#)");
+        bar.addNote("e(F#)");
         instrument = track.findInstrument("piano");
         section.addBar(instrument, bar);
 
         bar = new Bar();
-        bar.addNote("q(D)");
-        bar.addNote("e(D)");
+        bar.addNote("e(F#)");
         bar.addNote("-");
         bar.addNote("_");
         bar.addNote("_");
+        bar.addNote("_");
         instrument = track.findInstrument("piano");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        instrument = track.findInstrument("sd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        bar.addNote("e");
-        instrument = track.findInstrument("ch");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
-        section.addBar(instrument, bar);
-
-        bar = new Bar();
-        bar.addNote("q");
-        bar.addNote("_");
-        bar.addNote("q");
-        bar.addNote("_");
-        instrument = track.findInstrument("bd");
         section.addBar(instrument, bar);
 
         track.addSection(section);

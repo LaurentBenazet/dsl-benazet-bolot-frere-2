@@ -39,6 +39,7 @@ public class MidiPlayer {
         Bar bar;
 
         track = new Track("Test track");
+        track.setTempo(120);
 
         instrument = new Instrument("bd","Acoustic_Bass_Drum");
         instrument.setType("Acoustic_Bass_Drum");
@@ -54,7 +55,6 @@ public class MidiPlayer {
 
         section = new Section("intro");
         section.setBeats(4);
-        section.setTempo(160);
 
         bar = new Bar();
         bar.addNote("e");
@@ -100,7 +100,6 @@ public class MidiPlayer {
 
         section = new Section("intro2");
         section.setBeats(4);
-        section.setTempo(160);
 
         bar = new Bar();
         bar.addNote("e");

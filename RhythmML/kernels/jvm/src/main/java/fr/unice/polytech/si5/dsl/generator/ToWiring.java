@@ -81,7 +81,6 @@ public class ToWiring extends Visitor<StringBuffer> {
     public void visit(Section section) {
         w("        section = new Section(\"" + section.getName() + "\");");
         w("        section.setBeats(" + section.getBeats() + ");");
-        w("        section.setTempo(" + section.getTempo() + ");");
 
         Map<Instrument, List<Bar>> partition = section.getPartition();
 
