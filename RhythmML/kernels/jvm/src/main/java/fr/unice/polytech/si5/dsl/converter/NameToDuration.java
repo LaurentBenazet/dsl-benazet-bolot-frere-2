@@ -1,22 +1,22 @@
 package fr.unice.polytech.si5.dsl.converter;
 
 public enum NameToDuration {
-    Whole_Note(4,"w",false),
-    Half_Note(2,"h",false),
-    Quarter_Note(1,"q",false),
-    Eighth_Note(0.5,"e",false),
-    Triplet(0.333,"t",false), //I know it's not accurate but it should be close enough for us
-    Sixteenth_Note(0.25,"s",false),
-    Quarter_Rest(0.25,".",true),
-    Half_Rest(0.5,"-",true),
-    Whole_Rest(1,"_",true);
+    WHOLE_NOTE(4, "w", false),
+    HALF_NOTE(2, "h", false),
+    QUARTER_NOTE(1, "q", false),
+    EIGHTH_NOTE(0.5, "e", false),
+    TRIPLET(0.333, "t", false), //I know it's not accurate but it should be close enough for us
+    SIXTEENTH_NOTE(0.25, "s", false),
+    QUARTER_REST(0.25, ".", true),
+    HALF_REST(0.5, "-", true),
+    WHOLE_REST(1, "_", true);
 
 
     private double duration;
     private String regularName;
     private boolean isSilent;
 
-    NameToDuration(double duration,String regularName,boolean isSilent) {
+    NameToDuration(double duration, String regularName, boolean isSilent) {
         this.duration = duration;
         this.regularName = regularName;
         this.isSilent = isSilent;

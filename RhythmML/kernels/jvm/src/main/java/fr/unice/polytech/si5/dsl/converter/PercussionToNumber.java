@@ -3,25 +3,25 @@ package fr.unice.polytech.si5.dsl.converter;
 import java.util.Arrays;
 
 public enum PercussionToNumber {
-    Acoustic_Bass_Drum(35),
-    Bass_Drum(36),
-    Side_Stick(37),
-    Acoustic_Snare(38),
-    Hand_Clap(39),
-    Electric_Snare(40),
-    Low_Floor_Tom(41),
-    Closed_Hi_Hat(42),
-    High_Floor_Tom(43),
-    Pedal_Hi_Hat(44),
-    Low_Tom(45),
-    Open_Hi_Hat(46),
-    Low_Mid_Tom(47),
-    Hi_Mid_Tom(48),
-    Crash_Cymbal(49),
-    High_Tom(50),
-    Ride_Cymbal(51),
-    Tambourine(54),
-    Cowbell(56);
+    ACOUSTIC_BASS_DRUM(35),
+    BASS_DRUM(36),
+    SIDE_STICK(37),
+    ACOUSTIC_SNARE(38),
+    HAND_CLAP(39),
+    ELECTRIC_SNARE(40),
+    LOW_FLOOR_TOM(41),
+    CLOSED_HI_HAT(42),
+    HIGH_FLOOR_TOM(43),
+    PEDAL_HI_HAT(44),
+    LOW_TOM(45),
+    OPEN_HI_HAT(46),
+    LOW_MID_TOM(47),
+    HI_MID_TOM(48),
+    CRASH_CYMBAL(49),
+    HIGH_TOM(50),
+    RIDE_CYMBAL(51),
+    TAMBOURINE(54),
+    COWBELL(56);
 
     private int number;
 
@@ -29,13 +29,13 @@ public enum PercussionToNumber {
         this.number = number;
     }
 
-    public int getNumber() {
-        return this.number;
-    }
-
     public static boolean contains(String test) {
         return Arrays
                 .stream(PercussionToNumber.values())
                 .anyMatch(c -> c.name().equals(test));
+    }
+
+    public int getNumber() {
+        return this.number;
     }
 }
